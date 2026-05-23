@@ -1,0 +1,2481 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://localhost:8080/mitaoe_portal12/index.php -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MITAOE - Student Information Portal</title>
+    
+    <!-- Fonts -->
+    <link href="./index_files/css2" rel="stylesheet">
+    
+    <!-- Boxicons -->
+    <link href="./index_files/boxicons.min.css" rel="stylesheet">
+    
+    <style>
+        /* ============================================
+           DESIGN 1: PROFESSIONAL ACADEMIC
+           Colors: Navy Blue + Gold + Red
+           ============================================ */
+        
+        /* ============================================
+           GLOBAL RESET & OUTLINE REMOVAL
+           ============================================ */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* TRIPLE-LAYER OUTLINE REMOVAL - GUARANTEED FIX */
+        *,
+        *::before,
+        *::after,
+        *:focus,
+        *:active,
+        *:focus-visible,
+        *:focus-within {
+            outline: 0 !important;
+            outline: none !important;
+            outline-width: 0 !important;
+            outline-style: none !important;
+            outline-color: transparent !important;
+        }
+
+        /* Remove from all interactive elements */
+        a, button, input, textarea, select, div[role="button"] {
+            outline: 0 !important;
+            outline: none !important;
+            -webkit-tap-highlight-color: transparent !important;
+            -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+        }
+
+        /* Remove tap highlights on mobile */
+        * {
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Allow text selection for content */
+        p, h1, h2, h3, h4, h5, h6, span, li, td, th, label {
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #ECF0F1;
+            overflow-x: hidden;
+        }
+
+        /* ============================================
+           SECTION 1: NAVIGATION BAR
+           Professional Navy Blue Theme
+           ============================================ */
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(44, 62, 80, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            transform: translateY(-2px);
+        }
+
+        .navbar-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand:hover .navbar-logo {
+            border-color: #F39C12;
+            box-shadow: 0 0 20px rgba(243, 156, 18, 0.5);
+        }
+
+        .navbar-title {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar-title h1 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: white;
+            letter-spacing: 2px;
+        }
+
+        .navbar.scrolled .navbar-title h1 {
+            color: white;
+        }
+
+        .navbar-title p {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 400;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 80%;
+            height: 3px;
+            background: #F39C12;
+            border-radius: 2px;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+
+        .nav-link:hover {
+            background: rgba(243, 156, 18, 0.1);
+            color: #F39C12;
+        }
+
+        .nav-link.active {
+            color: #F39C12;
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-toggle {
+            display: none;
+            font-size: 1.8rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* ============================================
+           SECTION 2: HERO SECTION
+           Navy Blue to Dark Blue Gradient
+           ============================================ */
+        
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #2C3E50 0%, #34495e 50%, #2C3E50 100%);
+            overflow: hidden;
+        }
+
+        /* Animated Wave Background */
+        .wave-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23F39C12' fill-opacity='0.1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") repeat-x;
+            animation: wave 15s linear infinite;
+        }
+
+        .wave:nth-child(2) {
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23E74C3C' fill-opacity='0.08' d='M0,160L48,165.3C96,171,192,181,288,186.7C384,192,480,192,576,170.7C672,149,768,107,864,101.3C960,96,1056,128,1152,149.3C1248,171,1344,181,1392,186.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") repeat-x;
+            animation: wave 20s linear infinite;
+            opacity: 0.5;
+        }
+
+        .wave:nth-child(3) {
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23F39C12' fill-opacity='0.05' d='M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,202.7C672,203,768,181,864,165.3C960,149,1056,139,1152,154.7C1248,171,1344,213,1392,234.7L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") repeat-x;
+            animation: wave 25s linear infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Floating Shapes - Gold & Red */
+        .floating-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.15;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .shape:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            width: 80px;
+            height: 80px;
+            background: #F39C12;
+            border-radius: 50%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            top: 60%;
+            right: 15%;
+            width: 100px;
+            height: 100px;
+            background: #E74C3C;
+            border-radius: 20px;
+            animation-delay: 2s;
+        }
+
+        .shape:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            width: 60px;
+            height: 60px;
+            background: #F39C12;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            animation-delay: 4s;
+        }
+
+        .shape:nth-child(4) {
+            top: 30%;
+            right: 25%;
+            width: 70px;
+            height: 70px;
+            background: #E74C3C;
+            border-radius: 50%;
+            animation-delay: 6s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-30px) rotate(90deg);
+            }
+            50% {
+                transform: translateY(-60px) rotate(180deg);
+            }
+            75% {
+                transform: translateY(-30px) rotate(270deg);
+            }
+        }
+
+        /* Hero Content */
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 900px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 3rem;
+            font-weight: 400;
+            animation: fadeIn 1.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* HERO BUTTONS - ZERO OUTLINE VERSION */
+        .btn {
+            padding: 1rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: 0 !important;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            outline: 0 !important;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        /* Force remove on ALL states */
+        .btn,
+        .btn:link,
+        .btn:visited,
+        .btn:hover,
+        .btn:active,
+        .btn:focus,
+        .btn:focus-visible {
+            outline: 0 !important;
+            outline-width: 0 !important;
+            outline-style: none !important;
+            border: 0 !important;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn i {
+            position: relative;
+            z-index: 1;
+            font-size: 1.3rem;
+        }
+
+        /* Gold Primary Button */
+        .btn-primary {
+            background: linear-gradient(135deg, #F39C12, #E67E22);
+            color: white;
+            box-shadow: 0 10px 30px rgba(243, 156, 18, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(243, 156, 18, 0.6);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-3px);
+        }
+
+        /* White Transparent Secondary Button */
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .btn-secondary:active {
+            transform: translateY(-3px);
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator i {
+            font-size: 2.5rem;
+            color: white;
+            opacity: 0.8;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-15px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+
+        /* ============================================
+           SECTION 3: QUICK STATS
+           Navy Blue Cards
+           ============================================ */
+        
+        .stats-section {
+            padding: 5rem 2rem;
+            background: white;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #2C3E50, #34495e);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #F39C12, #E74C3C, #F39C12);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-icon {
+            font-size: 4rem;
+            background: linear-gradient(135deg, #F39C12, #E74C3C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 2px 4px rgba(255,255,255,0.3));
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+
+        /* Continue to PART 2... */
+
+        /* ============================================
+           SECTION 4: FEATURES SHOWCASE
+           Professional Academic Style
+           ============================================ */
+        
+        .features-section {
+            padding: 5rem 2rem;
+            background: #ECF0F1;
+            justify-content : space-evenly;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #2C3E50, #34495e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-top: 4px solid #2C3E50;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(243, 156, 18, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            border-top-color: #F39C12;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #2C3E50, #34495e);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: linear-gradient(135deg, #F39C12, #E74C3C);
+        }
+
+        .feature-icon i {
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .feature-description {
+            font-size: 1rem;
+            color: #7f8c8d;
+            line-height: 1.8;
+        }
+
+        /* ============================================
+           SECTION 5: HOW IT WORKS (Timeline)
+           Gold & Navy Theme
+           ============================================ */
+        
+        .how-it-works-section {
+            padding: 5rem 2rem;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .how-it-works-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #F39C12, #E74C3C);
+            border-radius: 50%;
+            opacity: 0.05;
+        }
+
+        .timeline-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            position: relative;
+            padding-top: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 100px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2C3E50, #F39C12, #E74C3C);
+            z-index: 1;
+        }
+
+        .timeline-step {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .timeline-step:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            border-color: #F39C12;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #2C3E50, #34495e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: -60px auto 1.5rem auto;
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
+            border: 5px solid white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 3;
+        }
+
+        .step-icon {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #F39C12, #E74C3C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .step-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .step-description {
+            font-size: 1rem;
+            color: #7f8c8d;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .step-arrow {
+            position: absolute;
+            top: 50%;
+            right: -50px;
+            font-size: 2rem;
+            color: #F39C12;
+            transform: translateY(-50%);
+            animation: slideRight 1.5s infinite;
+        }
+
+        @keyframes slideRight {
+            0%, 100% { transform: translateY(-50%) translateX(0); }
+            50% { transform: translateY(-50%) translateX(10px); }
+        }
+
+        .timeline-step:last-child .step-arrow {
+            display: none;
+        }
+
+        /* ============================================
+           SECTION 6: PORTALS ACCESS (Faculty Only)
+           Professional Gold Theme
+           ============================================ */
+        
+        .portals-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #ECF0F1 0%, #d5dbdb 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portals-section::before,
+        .portals-section::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            opacity: 0.05;
+        }
+
+        .portals-section::before {
+            top: -200px;
+            left: -200px;
+            background: #2C3E50;
+        }
+
+        .portals-section::after {
+            bottom: -200px;
+            right: -200px;
+            background: #F39C12;
+        }
+
+        .portals-grid {
+            max-width: 600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .portal-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: 0 15px 60px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border-top: 5px solid #F39C12;
+        }
+
+        .portal-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(243, 156, 18, 0.05) 100%);
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .portal-card:hover::before {
+            transform: translateY(0);
+        }
+
+        .portal-card:hover {
+            transform: translateY(-20px) scale(1.02);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.2);
+        }
+
+        .portal-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2C3E50, #34495e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem auto;
+            position: relative;
+            z-index: 2;
+            transition: all 0.4s ease;
+            border: 4px solid #F39C12;
+        }
+
+        .portal-card:hover .portal-icon {
+            transform: scale(1.1) rotate(360deg);
+            background: linear-gradient(135deg, #F39C12, #E74C3C);
+        }
+
+        .portal-icon i {
+            font-size: 4rem;
+            color: white;
+        }
+
+        .portal-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .portal-description {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            position: relative;
+            z-index: 2;
+        }
+
+        .portal-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+            position: relative;
+            z-index: 2;
+        }
+
+        .portal-features li {
+            padding: 0.75rem 0;
+            color: #2c3e50;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .portal-features li i {
+            color: #F39C12;
+            font-size: 1.25rem;
+        }
+
+        /* PORTAL BUTTON - ZERO OUTLINE VERSION */
+        .portal-btn {
+            padding: 1.25rem 3rem;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: linear-gradient(135deg, #F39C12, #E67E22);
+            box-shadow: 0 10px 30px rgba(243, 156, 18, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+            outline: 0 !important;
+            border: 0 !important;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        /* Force remove on ALL states */
+        .portal-btn,
+        .portal-btn:link,
+        .portal-btn:visited,
+        .portal-btn:hover,
+        .portal-btn:active,
+        .portal-btn:focus,
+        .portal-btn:focus-visible {
+            outline: 0 !important;
+            outline-width: 0 !important;
+            outline-style: none !important;
+            border: 0 !important;
+        }
+
+        .portal-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .portal-btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .portal-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .portal-btn i {
+            position: relative;
+            z-index: 1;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .portal-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(243, 156, 18, 0.6);
+        }
+
+        .portal-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        .portal-btn:active {
+            transform: scale(1.02);
+        }
+
+        /* ============================================
+           SECTION 7: TESTIMONIALS
+           Professional Academic Style
+           ============================================ */
+        
+        .testimonials-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, #ECF0F1 0%, #ffffff 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            position: relative;
+            transition: all 0.3s ease;
+            border-left: 5px solid #2C3E50;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 120px;
+            color: #F39C12;
+            opacity: 0.1;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+            border-left-color: #F39C12;
+        }
+
+        .testimonial-content {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-style: italic;
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2C3E50, #34495e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            border: 3px solid #F39C12;
+        }
+
+        .author-info h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
+        .testimonial-stars {
+            margin-top: 1rem;
+            color: #F39C12;
+            font-size: 1.2rem;
+        }
+
+        /* ============================================
+           SECTION 8: COLLEGE INFO
+           Navy Blue Background
+           ============================================ */
+        
+        .info-section {
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #2C3E50, #34495e);
+        }
+
+        .info-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+            border-color: #F39C12;
+        }
+
+        .info-icon {
+            font-size: 3rem;
+            color: #F39C12;
+            margin-bottom: 1rem;
+        }
+
+        .info-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-text {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        .info-link {
+            color: #F39C12;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .info-link:hover {
+            color: #E74C3C;
+        }
+
+        /* ============================================
+           SECTION 9: FOOTER
+           Dark Professional Theme
+           ============================================ */
+        
+        .footer {
+            background: #1a252f;
+            color: white;
+            padding: 4rem 2rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-brand h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #F39C12, #E74C3C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: linear-gradient(135deg, #F39C12, #E74C3C);
+            transform: translateY(-5px);
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: #F39C12;
+            padding-left: 5px;
+        }
+
+        .footer-links i {
+            font-size: 1rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 1rem;
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN - MEDIA QUERIES
+           ============================================ */
+        
+        /* Large Desktop */
+        @media (min-width: 1440px) {
+            .navbar .container,
+            .stats-grid,
+            .features-grid,
+            .timeline-container,
+            .testimonials-container,
+            .info-grid,
+            .footer-container {
+                max-width: 1600px;
+            }
+        }
+
+        /* Desktop */
+        @media (max-width: 1024px) {
+            .timeline::before {
+                display: none;
+            }
+
+            .step-arrow {
+                display: none;
+            }
+
+            .portals-grid {
+                max-width: 500px;
+            }
+        }
+
+        /* Tablet */
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: rgba(44, 62, 80, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: center;
+                gap: 2rem;
+                transition: left 0.3s ease;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .navbar .container {
+                padding: 0 2rem;
+            }
+
+            .navbar-title h1 {
+                font-size: 1.2rem;
+            }
+
+            .navbar-title p {
+                font-size: 0.65rem;
+            }
+
+            .navbar-logo {
+                width: 50px;
+                height: 50px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .features-grid,
+            .testimonials-grid,
+            .info-grid,
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                grid-template-columns: 1fr;
+            }
+
+            .portals-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portal-card {
+                padding: 2rem;
+            }
+        }
+
+        /* Mobile Small */
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 0.875rem 2rem;
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .stat-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .feature-card,
+            .testimonial-card {
+                padding: 2rem;
+            }
+
+            .portal-card {
+                padding: 1.5rem;
+            }
+
+            .portal-icon {
+                width: 100px;
+                height: 100px;
+            }
+
+            .portal-icon i {
+                font-size: 3rem;
+            }
+
+            .portal-btn {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+        }
+
+        /* ============================================
+           SCROLL ANIMATIONS
+           ============================================ */
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* ============================================
+           PAGE LOADER
+           ============================================ */
+        
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #2C3E50, #34495e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease;
+        }
+
+        .page-loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader-content {
+            text-align: center;
+        }
+
+        .loader-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem auto;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .loader-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            border-top-color: #F39C12;
+            border-radius: 50%;
+            margin: 0 auto;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- ============================================
+         PAGE LOADER
+         ============================================ -->
+    
+    <div class="page-loader hidden" id="pageLoader">
+        <div class="loader-content">
+            <img src="./index_files/mitaoe-logo.jpg" alt="Loading" class="loader-logo">
+            <div class="loader-text">Loading MITAOE Portal...</div>
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         NAVIGATION BAR
+         ============================================ -->
+    
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="http://localhost:8080/mitaoe_portal12/index_design1.php" class="navbar-brand">
+                <img src="./index_files/mitaoe-logo.jpg" alt="MIT Logo" class="navbar-logo">
+                <div class="navbar-title">
+                    <h1>MITAOE</h1>
+                    <p>Academy of Engineering</p>
+                </div>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="http://localhost:8080/mitaoe_portal12/index.php#home" class="nav-link active">Home</a></li>
+                <li><a href="http://localhost:8080/mitaoe_portal12/index.php#about" class="nav-link">About</a></li>
+                <li><a href="http://localhost:8080/mitaoe_portal12/index.php#features" class="nav-link">Features</a></li>
+                <li><a href="http://localhost:8080/mitaoe_portal12/index.php#portals" class="nav-link">Portals</a></li>
+                <li><a href="http://localhost:8080/mitaoe_portal12/index.php#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <i class="bx bx-menu mobile-toggle" id="mobileToggle"></i>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    
+    <section class="hero" id="home">
+        <!-- Animated Wave Background -->
+        <div class="wave-container">
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+        </div>
+
+        <!-- Floating Shapes -->
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to MITAOE</h1>
+            <p class="hero-subtitle">Streamlined Information Management Portal</p>
+            
+            <div class="hero-buttons">
+                <a href="http://localhost:8080/mitaoe_portal12/faculty/faculty_auth.php" class="btn btn-primary" style="outline: none 0px;">
+                    <span>Faculty Login</span>
+                    <i class="bx bx-right-arrow-alt"></i>
+                </a>
+                <a href="http://localhost:8080/mitaoe_portal12/index.php#about" class="btn btn-secondary" style="outline: none 0px;">
+                    <span>Learn More</span>
+                    <i class="bx bx-down-arrow-alt"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <i class="bx bx-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ============================================
+         STATS SECTION
+         ============================================ -->
+    
+    <section class="stats-section" id="about">
+        <div class="stats-grid">
+            <div class="stat-card fade-in">
+                <i class="bx bxs-graduation stat-icon"></i>
+                <div class="stat-number" data-target="5000">0</div>
+                <div class="stat-label">Students</div>
+            </div>
+
+            <div class="stat-card fade-in">
+                <i class="bx bxs-user-badge stat-icon"></i>
+                <div class="stat-number" data-target="200">0</div>
+                <div class="stat-label">Teachers</div>
+            </div>
+
+            <div class="stat-card fade-in">
+                <i class="bx bxs-book-content stat-icon"></i>
+                <div class="stat-number" data-target="50">0</div>
+                <div class="stat-label">Courses</div>
+            </div>
+
+            <div class="stat-card fade-in">
+                <i class="bx bxs-trophy stat-icon"></i>
+                <div class="stat-number" data-target="10">0</div>
+                <div class="stat-label">Awards</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FEATURES SECTION
+         ============================================ -->
+    
+    <section class="features-section" id="features">
+        <div class="section-header fade-in">
+            <h2 class="section-title">Why Choose MITAOE Portal?</h2>
+            <p class="section-subtitle">Powerful features designed for modern education management</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <h3 class="feature-title">Secure Authentication</h3>
+                <p class="feature-description">Advanced security measures with encrypted passwords and role-based access control to protect your data.</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <i class="bx bx-trending-up"></i>
+                </div>
+                <h3 class="feature-title">Real-time Data</h3>
+                <p class="feature-description">Instant access to updated student and teacher information with live synchronization across all devices.</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <i class="bx bx-search-alt"></i>
+                </div>
+                <h3 class="feature-title">Advanced Search</h3>
+                <p class="feature-description">Powerful search functionality with multiple filters to find any record quickly and efficiently.</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <i class="bx bx-mobile-alt"></i>
+                </div>
+                <h3 class="feature-title">Responsive Design</h3>
+                <p class="feature-description">Access from anywhere on any device - desktop, tablet, or mobile with seamless experience.</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <i class="bx bx-upload"></i>
+                </div>
+                <h3 class="feature-title">Bulk Operations</h3>
+                <p class="feature-description">Upload multiple records via CSV, perform bulk updates, and manage large datasets efficiently.</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <i class="bx bx-history"></i>
+                </div>
+                <h3 class="feature-title">Activity Tracking</h3>
+                <p class="feature-description">Complete audit trail of all actions with detailed logs for security and accountability.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         HOW IT WORKS SECTION
+         ============================================ -->
+    
+    <section class="how-it-works-section">
+        <div class="section-header fade-in">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Get started in three simple steps</p>
+        </div>
+
+        <div class="timeline-container">
+            <div class="timeline">
+                <div class="timeline-step slide-in-left">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="bx bx-log-in"></i>
+                    </div>
+                    <h3 class="step-title">Login</h3>
+                    <p class="step-description">Access the portal using your secure credentials. Faculty members can login to view student records and academic information.</p>
+                    <i class="bx bx-right-arrow-alt step-arrow"></i>
+                </div>
+
+                <div class="timeline-step slide-in-left">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="bx bx-search"></i>
+                    </div>
+                    <h3 class="step-title">Browse</h3>
+                    <p class="step-description">Navigate through student and teacher records with powerful search and filter options to find exactly what you need.</p>
+                    <i class="bx bx-right-arrow-alt step-arrow"></i>
+                </div>
+
+                <div class="timeline-step slide-in-left">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="bx bx-user-circle"></i>
+                    </div>
+                    <h3 class="step-title">View Profile</h3>
+                    <p class="step-description">Access detailed profiles with complete information and manage data efficiently with our intuitive interface.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PORTALS ACCESS SECTION (Faculty Only)
+         ============================================ -->
+    
+    <section class="portals-section" id="portals">
+        <div class="section-header fade-in">
+            <h2 class="section-title">Faculty Portal Access</h2>
+            <p class="section-subtitle">Login to access student records and academic information</p>
+        </div>
+
+        <div class="portals-grid">
+            <!-- Faculty Portal Card (ONLY THIS ONE - CENTERED) -->
+            <div class="portal-card portal-faculty scale-in">
+                <div class="portal-icon">
+                    <i class="bx bxs-user-badge"></i>
+                </div>
+                
+                <h3 class="portal-title">Faculty Portal</h3>
+                
+                <p class="portal-description">
+                    Access student records, view profiles, and manage academic information with comprehensive faculty tools.
+                </p>
+                
+                <ul class="portal-features">
+                    <li><i class="bx bx-check-circle"></i> View student profiles</li>
+                    <li><i class="bx bx-check-circle"></i> Search records instantly</li>
+                    <li><i class="bx bx-check-circle"></i> Access academic data</li>
+                    <li><i class="bx bx-check-circle"></i> Download reports</li>
+                </ul>
+
+                <a href="http://localhost:8080/mitaoe_portal12/faculty/faculty_auth.php" class="portal-btn" style="outline: none 0px;">
+                    <span>Faculty Login</span>
+                    <i class="bx bx-right-arrow-alt"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         TESTIMONIALS SECTION
+         ============================================ -->
+    
+    <section class="testimonials-section">
+        <div class="section-header fade-in">
+            <h2 class="section-title">What Faculty Say</h2>
+            <p class="section-subtitle">Testimonials from our esteemed faculty members</p>
+        </div>
+
+        <div class="testimonials-container">
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 - Dr. Vaishali Wangikar -->
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-content">
+                        "The MITAOE portal has revolutionized how we manage student information. The interface is intuitive and the search functionality is exceptional. It saves us hours of administrative work every week."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">VW</div>
+                        <div class="author-info">
+                            <h4>Dr. Vaishali Wangikar</h4>
+                            <p>HOD of Data Science</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 - Dr. Rahul Adhao -->
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-content">
+                        "Excellent system! The ability to quickly access student records and generate reports has made my job much easier. The security features give me confidence in data protection."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RA</div>
+                        <div class="author-info">
+                            <h4>Dr. Rahul Adhao</h4>
+                            <p>Professor, Computer Science</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 - Mrs. Laxmi Kale -->
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-content">
+                        "A well-designed portal that meets all our needs. The responsive design works perfectly on my tablet during classes. Highly recommend for academic institutions."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">LK</div>
+                        <div class="author-info">
+                            <h4>Mrs. Laxmi Kale</h4>
+                            <p>Assistant Professor, Data Science </p>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 - Mrs. Swati Patil -->
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-content">
+                        "The portal is user-friendly and efficient. I particularly appreciate the bulk operations feature which saves tremendous time during semester transitions. A game-changer for faculty."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SP</div>
+                        <div class="author-info">
+                            <h4>Mrs. Swati Patil</h4>
+                            <p>Assistant Professor, Data Science </p>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         COLLEGE INFO SECTION
+         ============================================ -->
+    
+    <section class="info-section" id="contact">
+        <div class="info-grid">
+            <div class="info-card fade-in">
+                <i class="bx bx-map info-icon"></i>
+                <h3 class="info-title">Location</h3>
+                <p class="info-text">
+                    MIT Academy of Engineering,<br>
+                    Alandi (D), Pune - 412105,<br>
+                    Maharashtra, India
+                </p>
+            </div>
+
+            <div class="info-card fade-in">
+                <i class="bx bx-envelope info-icon"></i>
+                <h3 class="info-title">Email</h3>
+                <p class="info-text">
+                    <a href="mailto:info@mitaoe.ac.in" class="info-link">info@mitaoe.ac.in</a><br>
+                    <a href="mailto:principal@mitaoe.ac.in" class="info-link">principal@mitaoe.ac.in</a>
+                </p>
+            </div>
+
+            <div class="info-card fade-in">
+                <i class="bx bx-phone info-icon"></i>
+                <h3 class="info-title">Phone</h3>
+                <p class="info-text">
+                    Office: +91-2133-661096<br>
+                    Office: +91-2133-661097<br>
+                    Fax: +91-2133-661049
+                </p>
+            </div>
+
+            <div class="info-card fade-in">
+                <i class="bx bx-time info-icon"></i>
+                <h3 class="info-title">Office Hours</h3>
+                <p class="info-text">
+                    Monday - Friday<br>
+                    9:00 AM - 5:00 PM<br>
+                    Saturday: 9:00 AM - 1:00 PM
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <!-- Brand Section -->
+                <div class="footer-brand">
+                    <h2>MITAOE</h2>
+                    <p>MIT Academy of Engineering - Shaping future engineers and leaders through quality education and innovative learning.</p>
+                    <div class="footer-social">
+                        <a href="http://localhost:8080/mitaoe_portal12/index.php#" class="social-icon"><i class="bx bxl-facebook"></i></a>
+                        <a href="http://localhost:8080/mitaoe_portal12/index.php#" class="social-icon"><i class="bx bxl-twitter"></i></a>
+                        <a href="http://localhost:8080/mitaoe_portal12/index.php#" class="social-icon"><i class="bx bxl-linkedin"></i></a>
+                        <a href="http://localhost:8080/mitaoe_portal12/index.php#" class="social-icon"><i class="bx bxl-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="http://localhost:8080/mitaoe_portal12/index.php#home"><i class="bx bx-chevron-right"></i> Home</a></li>
+                        <li><a href="http://localhost:8080/mitaoe_portal12/index.php#about"><i class="bx bx-chevron-right"></i> About Us</a></li>
+                        <li><a href="http://localhost:8080/mitaoe_portal12/index.php#features"><i class="bx bx-chevron-right"></i> Features</a></li>
+                        <li><a href="http://localhost:8080/mitaoe_portal12/index.php#portals"><i class="bx bx-chevron-right"></i> Portals</a></li>
+                        <li><a href="http://localhost:8080/mitaoe_portal12/index.php#contact"><i class="bx bx-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="http://localhost:8080/mitaoe_portal12/index.php#"><i class="bx bx-chevron-right"></i> Help Center</a></li>
+                        <li><a href="http://localhost:8080/mitaoe_portal12/index.php#"><i class="bx bx-chevron-right"></i> Documentation</a></li>
+                        <li><a href="http://localhost:8080/mitaoe_portal12/index.php#"><i class="bx bx-chevron-right"></i> FAQs</a></li>
+                        <li><a href="http://localhost:8080/mitaoe_portal12/index.php#"><i class="bx bx-chevron-right"></i> Privacy Policy</a></li>
+                        <li><a href="http://localhost:8080/mitaoe_portal12/index.php#"><i class="bx bx-chevron-right"></i> Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="http://localhost:8080/mitaoe_portal12/index.php#"><i class="bx bx-map"></i> Alandi, Pune - 412105</a></li>
+                        <li><a href="mailto:info@mitaoe.ac.in"><i class="bx bx-envelope"></i> info@mitaoe.ac.in</a></li>
+                        <li><a href="tel:+912133661096"><i class="bx bx-phone"></i> +91-2133-661096</a></li>
+                        <li><a href="http://localhost:8080/mitaoe_portal12/index.php#"><i class="bx bx-globe"></i> www.mitaoe.ac.in</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2024 MIT Academy of Engineering. All rights reserved.</p>
+                <p>Developed with <i class="bx bx-heart" style="color: #E74C3C;"></i> by MITAOE Students</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ============================================
+         JAVASCRIPT - WITH FIXED ADMIN NOTIFICATION
+         ============================================ -->
+    
+    <script>
+        // ===== PAGE LOADER =====
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('pageLoader').classList.add('hidden');
+            }, 1500);
+        });
+
+        // ===== NAVBAR SCROLL EFFECT =====
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ===== MOBILE MENU TOGGLE =====
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            
+            // Change icon
+            if (navMenu.classList.contains('active')) {
+                mobileToggle.classList.remove('bx-menu');
+                mobileToggle.classList.add('bx-x');
+            } else {
+                mobileToggle.classList.remove('bx-x');
+                mobileToggle.classList.add('bx-menu');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggle.classList.remove('bx-x');
+                mobileToggle.classList.add('bx-menu');
+            });
+        });
+
+        // ===== ACTIVE NAV LINK ON SCROLL =====
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // ===== COUNTER ANIMATION =====
+        const counters = document.querySelectorAll('.stat-number');
+        let animated = false;
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000; // 2 seconds
+                const increment = target / (duration / 16); // 60fps
+                let current = 0;
+
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.textContent = Math.ceil(current) + '+';
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target + '+';
+                    }
+                };
+
+                updateCounter();
+            });
+        };
+
+        // ===== SCROLL ANIMATIONS =====
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Trigger counter animation when stats section is visible
+                    if (entry.target.closest('.stats-section') && !animated) {
+                        animateCounters();
+                        animated = true;
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with animation classes
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ===== FORCE REMOVE OUTLINES ON BUTTONS =====
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all buttons and links
+            const buttons = document.querySelectorAll('.btn, .portal-btn, a, button');
+            
+            buttons.forEach(button => {
+                // Remove outline on click
+                button.addEventListener('click', function(e) {
+                    this.style.outline = '0';
+                    this.style.outlineWidth = '0';
+                    this.style.outlineStyle = 'none';
+                    this.style.border = '0';
+                });
+                
+                // Remove outline on focus
+                button.addEventListener('focus', function(e) {
+                    this.style.outline = '0';
+                    this.style.outlineWidth = '0';
+                    this.style.outlineStyle = 'none';
+                });
+                
+                // Remove outline on blur
+                button.addEventListener('blur', function(e) {
+                    this.style.outline = '0';
+                    this.style.outlineWidth = '0';
+                    this.style.outlineStyle = 'none';
+                });
+
+                // Remove outline on mousedown
+                button.addEventListener('mousedown', function(e) {
+                    this.style.outline = '0';
+                    this.style.outlineWidth = '0';
+                    this.style.outlineStyle = 'none';
+                });
+
+                // Remove outline on mouseup
+                button.addEventListener('mouseup', function(e) {
+                    this.style.outline = '0';
+                    this.style.outlineWidth = '0';
+                    this.style.outlineStyle = 'none';
+                });
+            });
+        });
+
+        // ===== SCROLL TO TOP ON LOGO CLICK =====
+        document.querySelector('.navbar-brand').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // ===== PARALLAX EFFECT FOR HERO =====
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const hero = document.querySelector('.hero-content');
+            
+            if (hero && scrolled < 800) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+                hero.style.opacity = 1 - (scrolled / 700);
+            }
+        });
+
+        // ===== KEYBOARD SHORTCUTS - FIXED ADMIN NOTIFICATION =====
+        document.addEventListener('keydown', (e) => {
+            // Ctrl + Shift + A for admin login (SECRET SHORTCUT)
+            if (e.ctrlKey && e.shiftKey && (e.key === 'A' || e.key === 'a')) {
+                e.preventDefault();
+                console.log('🔐 Admin shortcut activated! Redirecting...');
+                
+                // Create notification element
+                const notification = document.createElement('div');
+                notification.id = 'adminNotification'; // Give it an ID for easy removal
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: linear-gradient(135deg, #2C3E50, #34495e);
+                    color: white;
+                    padding: 2rem 3rem;
+                    border-radius: 20px;
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    z-index: 10001;
+                    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+                    animation: fadeInScale 0.3s ease;
+                    border: 3px solid #F39C12;
+                `;
+                notification.innerHTML = '<i class="bx bx-shield-alt-2" style="font-size: 2rem; margin-right: 1rem; color: #F39C12;"></i>Admin Access Unlocked';
+                
+                // Add animation
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes fadeInScale {
+                        from { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+                        to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+                    }
+                    @keyframes fadeOutScale {
+                        from { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+                        to { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+                    }
+                `;
+                document.head.appendChild(style);
+                document.body.appendChild(notification);
+                
+                // CRITICAL FIX: Remove notification BEFORE redirect
+                setTimeout(() => {
+                    // Add fade out animation
+                    notification.style.animation = 'fadeOutScale 0.3s ease';
+                    
+                    // Wait for animation to complete, then remove from DOM
+                    setTimeout(() => {
+                        if (notification && notification.parentNode) {
+                            notification.parentNode.removeChild(notification);
+                        }
+                        // Remove the style element too
+                        if (style && style.parentNode) {
+                            style.parentNode.removeChild(style);
+                        }
+                        
+                        // NOW redirect to admin page
+                        window.location.href = 'admin/admin_login.php';
+                    }, 300); // Wait for fade out animation
+                }, 700); // Show notification for 700ms
+            }
+        });
+
+        // ===== ADDITIONAL FIX: Clean up any orphaned notifications on page load =====
+        window.addEventListener('load', () => {
+            // Remove any notification that might have persisted
+            const orphanedNotification = document.getElementById('adminNotification');
+            if (orphanedNotification) {
+                orphanedNotification.remove();
+            }
+        });
+
+        // ===== ADDITIONAL FIX: Clean up on page visibility change =====
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'visible') {
+                // Remove notification when user returns to page
+                const orphanedNotification = document.getElementById('adminNotification');
+                if (orphanedNotification) {
+                    orphanedNotification.remove();
+                }
+            }
+        });
+
+        // ===== LOG PORTAL ACCESS =====
+        document.querySelectorAll('.portal-btn, .btn-primary').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const portalType = this.textContent.includes('Faculty') ? 'Faculty' : 'Unknown';
+                console.log(`✅ Navigating to ${portalType} Portal...`);
+            });
+        });
+
+        // ===== PREVENT TEXT SELECTION ON BUTTONS =====
+        document.querySelectorAll('.btn, .portal-btn').forEach(btn => {
+            btn.addEventListener('selectstart', (e) => {
+                e.preventDefault();
+                return false;
+            });
+        });
+
+        // ===== CONSOLE EASTER EGG =====
+        console.log('%c🎓 MITAOE Student Information Portal', 'color: #2C3E50; font-size: 24px; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);');
+        console.log('%c✨ Design 1: Professional Academic', 'color: #F39C12; font-size: 16px; font-weight: 600;');
+        console.log('%c🔐 Secret Admin Shortcut: Ctrl + Shift + A', 'color: #E74C3C; font-size: 14px; font-style: italic;');
+        console.log('%c💼 Color Scheme: Navy Blue + Gold + Red', 'color: #7f8c8d; font-size: 12px;');
+        
+        // ASCII Art
+        console.log(`
+    ███╗   ███╗██╗████████╗ █████╗  ██████╗ ███████╗
+    ████╗ ████║██║╚══██╔══╝██╔══██╗██╔═══██╗██╔════╝
+    ██╔████╔██║██║   ██║   ███████║██║   ██║█████╗  
+    ██║╚██╔╝██║██║   ██║   ██╔══██║██║   ██║██╔══╝  
+    ██║ ╚═╝ ██║██║   ██║   ██║  ██║╚██████╔╝███████╗
+    ╚═╝     ╚═╝╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚══════╝
+        `);
+
+        // ===== PERFORMANCE OPTIMIZATION =====
+        // Throttle scroll events
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            if (scrollTimeout) {
+                window.cancelAnimationFrame(scrollTimeout);
+            }
+            scrollTimeout = window.requestAnimationFrame(() => {
+                // Scroll-dependent code here is already optimized above
+            });
+        }, { passive: true });
+
+        // ===== ACCESSIBILITY ENHANCEMENTS =====
+        // Add keyboard navigation for mobile menu
+        mobileToggle.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                mobileToggle.click();
+            }
+        });
+
+        // Add focus visible for keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Tab') {
+                document.body.classList.add('keyboard-nav');
+            }
+        });
+
+        document.addEventListener('mousedown', () => {
+            document.body.classList.remove('keyboard-nav');
+        });
+
+        // ===== FLOATING SCROLL TO TOP BUTTON =====
+        const scrollTopBtn = document.createElement('button');
+        scrollTopBtn.innerHTML = '<i class="bx bx-up-arrow-alt"></i>';
+        scrollTopBtn.style.cssText = `
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #F39C12, #E67E22);
+            color: white;
+            border: 0;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            outline: 0;
+        `;
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        scrollTopBtn.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) scale(1.1)';
+            this.style.boxShadow = '0 6px 20px rgba(243, 156, 18, 0.4)';
+        });
+
+        scrollTopBtn.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = '0 4px 15px rgba(243, 156, 18, 0.3)';
+        });
+
+        // Remove outline on all interactions
+        scrollTopBtn.addEventListener('focus', function() {
+            this.style.outline = '0';
+        });
+
+        scrollTopBtn.addEventListener('mousedown', function() {
+            this.style.outline = '0';
+        });
+
+        document.body.appendChild(scrollTopBtn);
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.style.display = 'flex';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
+        });
+
+        // ===== FINAL OUTLINE REMOVAL (NUCLEAR OPTION) =====
+        // This runs continuously to ensure no outlines ever appear
+        setInterval(() => {
+            document.querySelectorAll('.btn, .portal-btn, .btn-primary, .btn-secondary').forEach(el => {
+                el.style.outline = '0';
+                el.style.outlineWidth = '0';
+                el.style.outlineStyle = 'none';
+            });
+        }, 100);
+
+        // ===== PAGE READY NOTIFICATION =====
+        console.log('%c✅ Design 1 (Professional Academic) loaded successfully!', 'color: #22c55e; font-size: 14px; font-weight: bold;');
+        console.log('%c📱 Responsive design active for all devices', 'color: #2C3E50; font-size: 12px;');
+        console.log('%c🎨 Navy Blue + Gold + Red color scheme applied', 'color: #F39C12; font-size: 12px;');
+        console.log('%c🔧 Admin notification issue FIXED - no persistence on return', 'color: #E74C3C; font-size: 12px; font-weight: bold;');
+    </script><button style="position: fixed; bottom: 2rem; right: 2rem; width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, rgb(243, 156, 18), rgb(230, 126, 34)); color: white; border: 0px; font-size: 1.5rem; cursor: pointer; box-shadow: rgba(243, 156, 18, 0.3) 0px 4px 15px; display: none; align-items: center; justify-content: center; transition: 0.3s; z-index: 1000; outline: 0px;"><i class="bx bx-up-arrow-alt"></i></button>
+
+</body></html>

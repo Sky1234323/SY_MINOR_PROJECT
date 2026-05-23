@@ -1,0 +1,229 @@
+[02-Dec-2025 14:20:13 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: MySQL server has gone away in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:68
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(68): mysqli->query('SELECT COUNT(*)...')
+#1 C:\xampp\htdocs\mitaoe_portal12\admin\admin_dashboard.php(17): executeQuery('SELECT COUNT(*)...')
+#2 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 68
+[02-Dec-2025 14:20:29 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:31
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(31): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'mitaoe_portal', 3306)
+#1 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(49): initDatabase()
+#2 C:\xampp\htdocs\mitaoe_portal12\admin\admin_dashboard.php(4): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 31
+[02-Dec-2025 14:20:39 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:31
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(31): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'mitaoe_portal', 3306)
+#1 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(49): initDatabase()
+#2 C:\xampp\htdocs\mitaoe_portal12\admin\admin_dashboard.php(4): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 31
+[02-Dec-2025 19:51:39 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: MySQL server has gone away in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:68
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(68): mysqli->query('SELECT COUNT(*)...')
+#1 C:\xampp\htdocs\mitaoe_portal12\admin\admin_dashboard.php(17): executeQuery('SELECT COUNT(*)...')
+#2 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 68
+[31-Jan-2026 09:47:09 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: MySQL server has gone away in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:137
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(137): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(206): executeUpdate('INSERT INTO log...', 'sisssss', Array)
+#2 C:\xampp\htdocs\mitaoe_portal12\php\admin_auth.php(34): recordLogin('admin', 3, 'admin@mitaoe.ac...', 'success')
+#3 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 137
+[31-Jan-2026 09:47:20 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:31
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(31): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'mitaoe_portal', 3306)
+#1 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(49): initDatabase()
+#2 C:\xampp\htdocs\mitaoe_portal12\php\admin_auth.php(3): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 31
+[31-Jan-2026 09:47:57 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:31
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(31): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'mitaoe_portal', 3306)
+#1 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(49): initDatabase()
+#2 C:\xampp\htdocs\mitaoe_portal12\php\admin_auth.php(3): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 31
+[31-Jan-2026 09:48:17 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:31
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(31): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'mitaoe_portal', 3306)
+#1 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(49): initDatabase()
+#2 C:\xampp\htdocs\mitaoe_portal12\php\admin_auth.php(3): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 31
+[31-Jan-2026 09:48:24 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:31
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(31): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'mitaoe_portal', 3306)
+#1 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(49): initDatabase()
+#2 C:\xampp\htdocs\mitaoe_portal12\admin\admin_dashboard.php(4): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 31
+[31-Jan-2026 09:48:28 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:31
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(31): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'mitaoe_portal', 3306)
+#1 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(49): initDatabase()
+#2 C:\xampp\htdocs\mitaoe_portal12\admin\admin_dashboard.php(4): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 31
+[31-Jan-2026 09:48:35 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:31
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(31): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'mitaoe_portal', 3306)
+#1 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(49): initDatabase()
+#2 C:\xampp\htdocs\mitaoe_portal12\admin\admin_dashboard.php(4): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 31
+[31-Jan-2026 09:48:44 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:31
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(31): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'mitaoe_portal', 3306)
+#1 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(49): initDatabase()
+#2 C:\xampp\htdocs\mitaoe_portal12\admin\admin_dashboard.php(4): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 31
+[31-Jan-2026 09:49:03 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:31
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(31): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'mitaoe_portal', 3306)
+#1 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(49): initDatabase()
+#2 C:\xampp\htdocs\mitaoe_portal12\admin\admin_dashboard.php(4): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 31
+[31-Jan-2026 09:49:43 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:31
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(31): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'mitaoe_portal', 3306)
+#1 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(49): initDatabase()
+#2 C:\xampp\htdocs\mitaoe_portal12\admin\admin_dashboard.php(4): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 31
+[31-Jan-2026 09:49:57 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:31
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(31): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'mitaoe_portal', 3306)
+#1 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(49): initDatabase()
+#2 C:\xampp\htdocs\mitaoe_portal12\admin\admin_dashboard.php(4): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 31
+[31-Jan-2026 09:51:14 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:31
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(31): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'mitaoe_portal', 3306)
+#1 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(49): initDatabase()
+#2 C:\xampp\htdocs\mitaoe_portal12\admin\admin_dashboard.php(4): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 31
+[31-Jan-2026 09:51:22 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:31
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(31): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'mitaoe_portal', 3306)
+#1 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(49): initDatabase()
+#2 C:\xampp\htdocs\mitaoe_portal12\admin\admin_dashboard.php(4): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 31
+[03-Feb-2026 12:24:44 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:31
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(31): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'mitaoe_portal', 3306)
+#1 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(49): initDatabase()
+#2 C:\xampp\htdocs\mitaoe_portal12\php\admin_auth.php(3): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 31
+[17-Mar-2026 07:45:22 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Got error 168 "Unknown (generic) error from engine" from storage engine InnoDB in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:68
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(68): mysqli->query('SELECT * FROM a...')
+#1 C:\xampp\htdocs\mitaoe_portal12\admin\admin_dashboard.php(23): executeQuery('SELECT * FROM a...')
+#2 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 68
+[17-Mar-2026 07:45:23 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Got error 1877 "Unknown error" from storage engine InnoDB in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:68
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(68): mysqli->query('SELECT * FROM a...')
+#1 C:\xampp\htdocs\mitaoe_portal12\admin\admin_dashboard.php(23): executeQuery('SELECT * FROM a...')
+#2 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 68
+[17-Mar-2026 07:45:28 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Got error 1877 "Unknown error" from storage engine InnoDB in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:68
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(68): mysqli->query('SELECT * FROM a...')
+#1 C:\xampp\htdocs\mitaoe_portal12\admin\admin_dashboard.php(23): executeQuery('SELECT * FROM a...')
+#2 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 68
+[17-Mar-2026 07:45:30 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Got error 1877 "Unknown error" from storage engine InnoDB in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:68
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(68): mysqli->query('SELECT * FROM a...')
+#1 C:\xampp\htdocs\mitaoe_portal12\admin\admin_dashboard.php(23): executeQuery('SELECT * FROM a...')
+#2 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 68
+[17-Mar-2026 07:45:31 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Got error 1877 "Unknown error" from storage engine InnoDB in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:68
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(68): mysqli->query('SELECT * FROM a...')
+#1 C:\xampp\htdocs\mitaoe_portal12\admin\admin_dashboard.php(23): executeQuery('SELECT * FROM a...')
+#2 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 68
+[17-Mar-2026 07:45:32 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Got error 1877 "Unknown error" from storage engine InnoDB in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:68
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(68): mysqli->query('SELECT * FROM a...')
+#1 C:\xampp\htdocs\mitaoe_portal12\admin\admin_dashboard.php(23): executeQuery('SELECT * FROM a...')
+#2 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 68
+[17-Mar-2026 07:45:32 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Got error 1877 "Unknown error" from storage engine InnoDB in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:68
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(68): mysqli->query('SELECT * FROM a...')
+#1 C:\xampp\htdocs\mitaoe_portal12\admin\admin_dashboard.php(23): executeQuery('SELECT * FROM a...')
+#2 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 68
+[17-Mar-2026 07:45:32 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Got error 1877 "Unknown error" from storage engine InnoDB in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:68
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(68): mysqli->query('SELECT * FROM a...')
+#1 C:\xampp\htdocs\mitaoe_portal12\admin\admin_dashboard.php(23): executeQuery('SELECT * FROM a...')
+#2 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 68
+[17-Mar-2026 07:45:32 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Got error 1877 "Unknown error" from storage engine InnoDB in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:68
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(68): mysqli->query('SELECT * FROM a...')
+#1 C:\xampp\htdocs\mitaoe_portal12\admin\admin_dashboard.php(23): executeQuery('SELECT * FROM a...')
+#2 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 68
+[17-Mar-2026 07:45:36 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Got error 1877 "Unknown error" from storage engine InnoDB in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:68
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(68): mysqli->query('SELECT * FROM a...')
+#1 C:\xampp\htdocs\mitaoe_portal12\admin\admin_dashboard.php(23): executeQuery('SELECT * FROM a...')
+#2 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 68
+[17-Mar-2026 07:46:10 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Got error 1877 "Unknown error" from storage engine InnoDB in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:68
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(68): mysqli->query('SELECT * FROM a...')
+#1 C:\xampp\htdocs\mitaoe_portal12\admin\admin_dashboard.php(23): executeQuery('SELECT * FROM a...')
+#2 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 68
+[17-Mar-2026 07:46:11 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Got error 1877 "Unknown error" from storage engine InnoDB in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:68
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(68): mysqli->query('SELECT * FROM a...')
+#1 C:\xampp\htdocs\mitaoe_portal12\admin\admin_dashboard.php(23): executeQuery('SELECT * FROM a...')
+#2 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 68
+[21-May-2026 08:29:12 Europe/Berlin] Email Error: SMTP Error: Could not authenticate.
+[21-May-2026 08:30:19 Europe/Berlin] Email Error: SMTP Error: Could not authenticate.
+[21-May-2026 08:41:15 Europe/Berlin] PHP Warning:  Undefined variable $to in C:\xampp\htdocs\mitaoe_portal12\php\email_config.php on line 98
+[21-May-2026 08:41:15 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:184
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(184): mysqli->close()
+#1 [internal function]: closeConnection()
+#2 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 184
+[21-May-2026 08:43:13 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:184
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(184): mysqli->close()
+#1 [internal function]: closeConnection()
+#2 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 184
+[22-May-2026 10:56:17 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:184
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(184): mysqli->close()
+#1 [internal function]: closeConnection()
+#2 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 184
+[22-May-2026 19:09:35 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:184
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(184): mysqli->close()
+#1 [internal function]: closeConnection()
+#2 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 184
+[22-May-2026 19:15:35 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:184
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(184): mysqli->close()
+#1 [internal function]: closeConnection()
+#2 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 184

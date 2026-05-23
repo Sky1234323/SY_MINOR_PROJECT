@@ -1,0 +1,3 @@
+prn,first_name,middle_name,last_name,email,phone,dob,gender,address,city,state,department,class,division,roll_number,batch_year,parent_name,parent_phone
+202401120022,John,Kumar,Doe,john.doe@mitaoe.ac.in,9876543210,2005-01-15,Male,123 Main Street,Pune,Maharashtra,Computer Science,FE,A,101,2024,Robert Doe,9876543211
+202401120024,Jane,Marie,Smith,jane.smith@mitaoe.ac.in,9876543212,2005-03-22,Female,456 Park Avenue,Pune,Maharashtra,Information Technology,FE,B,102,2024,Sarah Smith,9876543213

@@ -1,0 +1,15 @@
+[22-May-2026 19:12:37 Europe/Berlin] ✅ Email sent successfully to: visionxstudio2006@gmail.com | Subject: Verify Your Email - MITAOE Faculty Portal
+[22-May-2026 19:12:37 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:184
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(184): mysqli->close()
+#1 [internal function]: closeConnection()
+#2 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 184
+[22-May-2026 19:14:22 Europe/Berlin] ✅ Email sent successfully to: visionxstudio2006@gmail.com | Subject: New Faculty Approval Request - Ramesh Patil
+[22-May-2026 19:14:22 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php:184
+Stack trace:
+#0 C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php(184): mysqli->close()
+#1 [internal function]: closeConnection()
+#2 {main}
+  thrown in C:\xampp\htdocs\mitaoe_portal12\php\db_connect.php on line 184
+[22-May-2026 19:15:27 Europe/Berlin] ✅ Email sent successfully to: visionxstudio2006@gmail.com | Subject: Account Approved - MITAOE Faculty Portal
